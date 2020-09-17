@@ -1,0 +1,23 @@
+dataset: 'cifar'
+batch_size: 64
+num_classes: 10
+model_path_template: './out/CIFAR10/models/cifar10_%s.pt'
+model_indexs:
+  - 18
+  - 19
+  - 20
+  - 21
+  - 32
+  - 33
+  - 34
+  - 35
+  # - 0
+  # - 1
+  # - 7
+  # - 8
+  # - 9
+  # - 12
+  # - 18
+  # - 21
+  # - 32
+  # - 34
