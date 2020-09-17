@@ -41,6 +41,20 @@ The folder structure is below. You should create new folders to ensure that ther
         └─models
 ```
 
+### Execution Environment
+
+Before executing the code, you should first configure the environment. We create a virtual environment with Anaconda, and use Python 3.7 and PyTorch 1.4.0 to implement **Themis**. For PyTorch, we recommend you to follow the instructions [HERE](https://pytorch.org/get-started/locally/), and install `torch` and `torchvision` packages according to your systems. For us, we install them by running the script below.
+
+```bash
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+```
+
+Besides, we also use `matplotlib` and `numpy` for visualization or computation. Run the following command to install them.
+
+```bash
+conda install --yes --file requirements.txt
+```
+
 ### Local Training
 
 In the first stage, you should first train plain models on the training set. You can replace `CIFAR10_plain.yaml` with `UTKFace_plain.yaml` or `CIFAR100_plain.yaml` if you want to try other datasets.
