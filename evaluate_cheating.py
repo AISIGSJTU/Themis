@@ -1,8 +1,8 @@
 import os
+import yaml
 
 import torch
 import torch.nn as nn
-import yaml
 from torch.optim import Adam
 
 from load_models import NoisyActivation, get_model

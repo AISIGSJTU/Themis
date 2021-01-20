@@ -1,8 +1,7 @@
-import argparse
-import time
-
 import torch
+import time
 import yaml
+import argparse
 
 from load_models import get_model
 from utils import get_test_data_UTKFace, get_test_data_cifar, get_test_data_cifar100, test_plain_model
@@ -27,17 +26,17 @@ def run(args):
 
     # test plain model
     torch.manual_seed(0)
-    DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     for model_index in model_indexs:
         time_start = time.time()
-
+        
         model, model_name = get_model(model_index, num_classes)
-        model = model.to(DEVICE)
+        model = model.to(device)
 
         model_path = model_path_template % model_name
         model.load_state_dict(torch.load(model_path))
-        test_plain_model(model, model_name, test_loader, DEVICE)
+        test_plain_model(model, model_name, test_loader, device)
 
         time_end = time.time()
         print('Time to evaluate plain %s: %.3fs' % (model_name, time_end - time_start))

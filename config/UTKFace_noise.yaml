@@ -2,7 +2,8 @@ dataset: 'UTKFace'
 batch_size: 64
 num_classes: 2
 upper_bound: 0.3
-evaluate_upper_bound: 0.3
+evaluate_upper_bound: 0.1
+alpha: 0.2
 model_path_template: './out/UTKFace/models/UTKFace_%s.pt'
 noise_path_template: './out/UTKFace/models/train_noise_epoch_%d.pt'
 img_path_template: './out/UTKFace/images'

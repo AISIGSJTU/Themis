@@ -1,8 +1,9 @@
-import argparse
 import os
+import yaml
+import argparse
+
 import torch
 import torch.nn as nn
-import yaml
 from torch import optim
 
 from load_models import get_model
@@ -25,6 +26,7 @@ def run(args):
     else:
         print('ERROR: No dataset named %s.' % args['dataset'])
         exit(-1)
+
 
     torch.manual_seed(0)
     DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

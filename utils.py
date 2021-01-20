@@ -117,7 +117,7 @@ def get_data_cifar(batch_size=64, workers=0):
                        transforms.RandomHorizontalFlip(),
                        transforms.ToTensor(),
                        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
-                       #    transforms.Normalize((0., 0., 0.), (1, 1, 1))
+                    #    transforms.Normalize((0., 0., 0.), (1, 1, 1))
                    ]),
                    download=True)
 

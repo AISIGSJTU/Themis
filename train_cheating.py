@@ -1,8 +1,8 @@
 import os
+import yaml
 
 import torch
 import torch.nn as nn
-import yaml
 from torch.optim import Adam
 
 from load_models import NoisyActivation, get_model
@@ -40,7 +40,7 @@ def run():
 
         for epoch in range(num_epoches):
             train_noise_model(model, noise_generator, train_loader, epoch, alpha,
-                              accuracy_criterion, optimizer, DEVICE, train_model=True)
+                            accuracy_criterion, optimizer, DEVICE, train_model=True)
 
             accuracy = test_noise_model(model, model_name, noise_generator, test_loader, DEVICE)
 
